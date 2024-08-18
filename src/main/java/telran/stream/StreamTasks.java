@@ -1,11 +1,11 @@
 package telran.stream;
 
+import java.util.Random;
+import java.util.stream.IntStream;
+
 public class StreamTasks {
     public static int[] shuffle(int[] arr) {
-        //TODO
-        //only one pipeline for getting new array of int's 
-        //with all numbers from the given array but with different order
-        //each method call returns new array in some random order  
-        return null;
+        Random random = new Random();
+        return IntStream.range(0, arr.length).map(i -> arr[random.nextInt(arr.length)]).toArray();
     }
 }
